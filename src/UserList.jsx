@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 import User from './User';
 import * as URLS from './constants';
 
-//export const API_PREFIX = 'https://localhost:7048';
-
 const UserListContainer = styled.div`
   display: flex;
   flex-direction: column;
