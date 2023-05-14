@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import * as URLS from './constants';
 
+//Form to add rating to a specific movie and user
 function AddRatingForm() {
   const [movie, setMovie] = useState('');
   const [user, setUser] = useState('');
@@ -10,27 +11,32 @@ function AddRatingForm() {
 
   const ratings = [1, 2, 3, 4, 5];
 
+  //Updates rating with changes in rating input field
   function handleRatingChange(evt) {
     console.log(evt.target.value);
     setRating(evt.target.value);
   }
 
+  //Updates movie with changes in movie input field
   function handleMovieChange(evt) {
     console.log(evt.target.value);
     setMovie(evt.target.value);
   }
 
+  //Updates user with changes in user input field
   function handleUserChange(evt) {
     console.log(evt.target.value);
     setUser(evt.target.value);
   }
 
+  //Handles button click for submit
   function handleSubmit(evt) {
     console.log(evt);
     addRating(user, rating, movie);
     evt.preventDefault();
   }
 
+  //API request to add new rating
   async function addRating(user, rating, movie) {
     await axios
       .post(URLS.ADD_RATING_BY_USERID_RATING_AND_MOVIENAME(user, rating, movie))

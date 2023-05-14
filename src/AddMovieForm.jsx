@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import * as URLS from './constants';
 
+//Form to add movie to a specific user and genre
 function AddMovieForm() {
   const [movie, setMovie] = useState('');
   const [user, setUser] = useState('');
@@ -87,27 +88,32 @@ function AddMovieForm() {
     },
   ];
 
+  //Updates ganre with changes in ganre input field
   function handleGenreChange(evt) {
     console.log(evt.target.value);
     setGenre(evt.target.value);
   }
 
+  //Updates movie with changes in movie input field
   function handleMovieChange(evt) {
     console.log(evt.target.value);
     setMovie(evt.target.value);
   }
 
+  //Updates user with changes in user input field
   function handleUserChange(evt) {
     console.log(evt.target.value);
     setUser(evt.target.value);
   }
 
+  //Handles button click for submit
   function handleSubmit(evt) {
     console.log(evt);
     addMovie(user, genre, movie);
     evt.preventDefault();
   }
 
+  //API request to add new movie
   async function addMovie(user, genre, movie) {
     await axios
       .post(URLS.ADD_MOVIE_BY_USERID_GENREID_AND_MOVIENAME(user, genre, movie))

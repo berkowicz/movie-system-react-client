@@ -13,17 +13,18 @@ const UserListContainer = styled.div`
   justify-content: space-evenly;
 `;
 
+//Get all users
 function UserList(props) {
   const [user, setUser] = React.useState({ data: [] });
   React.useEffect(() => {
     const fetchData = async () => {
       const result = await axios(URLS.GET_USERS);
-      //console.log(result);
       setUser(result);
     };
     fetchData();
   }, []);
 
+  //Returns users name and email to User
   return (
     <>
       <UserListContainer>

@@ -1,14 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Hero from './Hero';
 import UserList from './UserList';
@@ -26,13 +18,13 @@ function App() {
   return (
     <Router>
       <MainContainer>
-        <Hero />
+        <Hero /> //Header
         <Switch>
           <Route path="/user">
-            <UserPage />
+            <UserPage /> //Prints userpage with genres and movies
           </Route>
           <Route path="/">
-            <UserList />
+            <UserList /> //Prints homepage with all users
           </Route>
         </Switch>
       </MainContainer>

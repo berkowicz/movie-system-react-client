@@ -13,6 +13,7 @@ const UserGenreContainer = styled.div`
   margin-bottom: 1em;
 `;
 
+//Return genre title to UserGenreDetail
 function UserGenre(props) {
   return (
     <UserGenreContainer>

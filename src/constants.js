@@ -1,5 +1,7 @@
+//API prefix
 const API_PREFIX = 'https://localhost:7048';
 
+//Constants for API calls
 export const GET_USERS = `${API_PREFIX}/Get/User`;
 
 export const GET_GENRES_BY_USERID = (userId) =>

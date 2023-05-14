@@ -17,6 +17,7 @@ const UserEmail = styled.p`
   padding: 1em;
 `;
 
+//Prints Users on homepage
 function User(props) {
   return (
     <UserContainer>

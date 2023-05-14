@@ -1,24 +1,15 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, useParams } from 'react-router-dom';
 
 import * as URLS from './constants';
 import UserGenre from './UserGenre';
 
+//Gets genres
 function UserGenreDetail() {
   const [data, setData] = React.useState({ data: [] });
-  // Object destructuring:
-  let { userId } = useParams();
 
-  //console.log(URLS.GET_GENRES_BY_USERID);
+  let { userId } = useParams();
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +21,7 @@ function UserGenreDetail() {
     fetchData();
   }, []);
 
+  //Return a list of genres
   return (
     <>
       {data.data.map((genre) => (

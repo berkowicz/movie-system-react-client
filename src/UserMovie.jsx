@@ -13,6 +13,7 @@ const UserMovieContainer = styled.div`
   margin-bottom: 1em;
 `;
 
+//Return movie name and move rating to UserMovieDetail
 function UserMovie(props) {
   return (
     <UserMovieContainer>

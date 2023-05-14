@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import * as URLS from './constants';
 
+//Form to add genre to a specific user
 function AddGenreForm() {
   const [genre, setGenre] = useState('');
   const [user, setUser] = useState('');
@@ -86,22 +87,26 @@ function AddGenreForm() {
     },
   ];
 
+  //Updates ganre with changes in ganre input field
   function handleGenreChange(evt) {
     console.log(evt.target.value);
     setGenre(evt.target.value);
   }
 
+  //Updates user with changes in user input field
   function handleUserChange(evt) {
     console.log(evt.target.value);
     setUser(evt.target.value);
   }
 
+  //Handles button click for submit
   function handleSubmit(evt) {
     console.log(evt);
     addGenre(user, genre);
     evt.preventDefault();
   }
 
+  //API request to add new genre
   async function addGenre(user, genre) {
     await axios
       .post(URLS.ADD_GENRE_BY_USERID_AND_GENREID(user, genre))
